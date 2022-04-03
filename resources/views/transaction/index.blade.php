@@ -1,7 +1,5 @@
-@extends('home')
+@extends('transaction.master')
 
-@section('title', 'Transaction')
-
-@section('content_board')
-<h2>Transaction</h2>
+@section('transaction_title')
+<h2 class="section-title">My Transactions</h2>
 @endsection

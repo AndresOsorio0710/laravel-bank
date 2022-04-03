@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('amount')->default(0);
+            $table->decimal('amount')->default(0);
             $table->boolean('is_enabled')->default(true);
             $table->bigInteger('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('users');

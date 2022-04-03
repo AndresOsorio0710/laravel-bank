@@ -3,40 +3,19 @@
 @section('title', 'Register')
 
 @section('content')
-<dic class="container">
-  <div class="form-group">
-    <div class="title"><h2>Register to Bank App</h2></div>
-    <div class="form">
-      <form method="POST">
-        @csrf
-        <div class="form-component">
-          <label for="">Identification</label>
-          <input type="text" class="" placeholder="your ID" id="identification" name="identification">
-        </div>
-        <div class="form-component">
-          <label for="">Name</label>
-          <input type="text" class="" placeholder="your Name" id="name" name="name">
-        </div>
-        <div class="form-component">
-          <label for="">Last name</label>
-          <input type="text" class="" placeholder="your Last Name" id="last_name" name="last_name">
-        </div>
-        <div class="form-component">
-          <label for="">Email</label>
-          <input type="email" class="" placeholder="your Email" id="email" name="email">
-        </div>
-        <div class="form-component">
-          <label for="">Password</label>
-          <input type="password" class="" placeholder="your Password" id="password" name="password">
-        </div>
-        <div class="form-component">
-          <label for="">Password confirmation</label>
-          <input type="password" class="" placeholder="your Password" id="password_confirmation" name="password_confirmation">
-        </div>
-        <button type="submit">Register</button>
-      </form>
-    </div>
-    @if (Session::has('message'))
+<div class="section">
+  <div class="container">
+    <h2 class="section-title">Register to Bank App</h2>
+    <form method="POST" class="form-control box-shadow-1">
+      @csrf
+      <input type="text" class="" placeholder="your ID" id="identification" name="identification">
+      <input type="text" class="" placeholder="your Name?" id="name" name="name">
+      <input type="text" class="" placeholder="your Last Name?" id="last_name" name="last_name">
+      <input type="email" class="" placeholder="your Email?" id="email" name="email">
+      <input type="password" class="" placeholder="your Password" id="password" name="password">
+      <input type="password" class="" placeholder="your Password" id="password_confirmation" name="password_confirmation">
+      <input class="btn" type="submit" value="Register">
+      @if (Session::has('message'))
         <div class="alert alert-{{ Session::get('typealert') }}">
           {{ Session::get('message') }}
           @if ($errors->any())
@@ -47,8 +26,8 @@
             </ul>
           @endif
         </div>
-    @endif
-    <div class="footer"></div>
+      @endif
+    </form>    
   </div>
-</dic>
+</div>
 @endsection

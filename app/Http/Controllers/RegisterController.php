@@ -56,7 +56,7 @@ class RegisterController extends Controller
 
         $validator = Validator::make($request->all(),$rules, $message);
         if($validator->fails()):
-            return back()->withErrors($validator)->with('message', 'Se ha producido un erros')->with('typealert', 'danger');
+            return back()->withErrors($validator)->with('message', 'Se ha producido un erro')->with('typealert', 'danger');
         else:
             $new_user = new User;      
             $new_user->identification = e($request->identification); 

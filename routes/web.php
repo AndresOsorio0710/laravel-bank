@@ -5,6 +5,8 @@ use App\Http\Controllers\AccountController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SessionsController;
 use App\Http\Controllers\TransactionController;
+use App\Http\Controllers\TransactionOtherAccountController;
+use App\Http\Controllers\TransactionOwnAccountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,6 +35,14 @@ Route::get('/logout',[SessionsController::class, 'destroy'])->middleware('auth')
 //Account
 //Transaction
 Route::get('/account',[AccountController::class, 'create'])->middleware('auth')->name('account.index');
+Route::post('/account',[AccountController::class, 'store'])->middleware('auth')->name('account.store');
 
 //Transaction
 Route::get('/transaction',[TransactionController::class, 'create'])->middleware('auth')->name('transaction.index');
+
+// Own Account
+Route::get('/transaction_own_account',[TransactionOwnAccountController::class, 'create'])->middleware('auth')->name('transaction_own_account.index');
+Route::post('/transaction_own_account',[TransactionOwnAccountController::class, 'store'])->middleware('auth')->name('transaction_own_account.store');
+
+// Other Account
+Route::get('/transaction_other_account',[TransactionOtherAccountController::class, 'create'])->middleware('auth')->name('transaction_other_account.index');
