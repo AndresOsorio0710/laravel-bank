@@ -31,7 +31,7 @@
     <form method="POST" class="form-control box-shadow-1">
       @csrf
       <label for="title" class="title">New Transaction</label>
-      <select name="source_account" id="source_account">
+      <select name="source_account" id="source_account" velue="{{ old('source_account') }}">
         <option value="x" selected disabled class="none">Select the source account</option>
         @foreach ($my_accounts as $account)
           <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>

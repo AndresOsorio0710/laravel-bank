@@ -30,7 +30,7 @@
         @if (auth()->check())
           <a href="{{ route('transaction.index') }}">Banking Transactions</a>
           <a href="{{ route('account.index') }}">Account Status</a>
-          <a href="{{ route('login.destroy') }}">log Out</a>
+          <a class="logout" onclick="showModal()">Log Out</a>
         @else
           <a href="{{ route('login.index') }}">Log In</a>
           <a href="{{ route('register.index') }}">Register</a>
@@ -42,7 +42,20 @@
   @if (auth()->check())
     @yield('content_board')
   @endif
+  <article class="modal none" id="modal">
+    <div class="modal-content">
+      <div class="container-modal p-1r">
+        <h2 class="title text-center">Log Out</h2>
+        <p class="text-left">Are you sure you want to log out?</p>
+        <div class="container-right">
+          <button onclick="closeModal()" class="btn m-1r">No</button>
+          <a href="{{ route('login.destroy') }}"  onclick="closeModal()" class="btn">Yes</a>
+        </div>
+      </div>
+    </div>
+  </article>
   <!-- Scripts -->
   <script src="{{ url('/static/js/app.js?v=' . time()) }}"></script>
+  @yield('js')
 </body>
 </html>

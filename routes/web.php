@@ -46,3 +46,4 @@ Route::post('/transaction_own_account',[TransactionOwnAccountController::class, 
 
 // Other Account
 Route::get('/transaction_other_account',[TransactionOtherAccountController::class, 'create'])->middleware('auth')->name('transaction_other_account.index');
+Route::post('/transaction_other_account',[TransactionOtherAccountController::class, 'store'])->middleware('auth')->name('transaction_other_account.store');

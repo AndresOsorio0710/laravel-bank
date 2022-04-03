@@ -242,6 +242,29 @@ p {
         background-color: transparent;
     }
 }
+/* Modal question */
+.modal{
+    position: fixed;
+    z-index: 999;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black-alpha-color);
+    transition: all 1s;
+}
+
+.modal-content {
+    position: relative;
+}
+
+.container-modal{
+    background-color: var(--white-color);
+}
+
 
 /* Navbar Button */
 .nav-btn {
@@ -290,11 +313,6 @@ td {
 }
 
 /* Utilits */
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: var(--max-width);
-}
 
 .box-shadow-1 {
     box-shadow: 0.25rem 0.25rem 1rem rgba(0, 0, 0, 0.25);
@@ -361,6 +379,28 @@ td {
     grid-column: span 12;
 }
 
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: var(--max-width);
+}
+
+.container-center{
+    margin-top: auto;
+    margin: auto;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: center;
+}
+
+.container-right{
+    margin-top: auto;
+    margin: auto;
+    max-width: var(--max-width);
+    display: flex;
+    justify-content: right;
+}
+
 .info {
     width: 100%;
     display: block;
@@ -374,6 +414,14 @@ td {
 .info-left {
     color: var(--gray-dark-color);
     text-align: right;
+}
+
+.m-1r{
+    margin: 0rem 1rem;
+}
+
+.mtop-16{
+    margin-top: 16px;
 }
 
 .none {
@@ -408,6 +456,15 @@ td {
     color: var(--title-color);
 }
 
+.text-center {
+    text-align: center;
+}
+
+.text-danger{
+    color: var(--danger-font-color);
+    font-weight: bold;
+}
+
 .text-left {
     text-align: left;
 }
@@ -416,8 +473,9 @@ td {
     text-align: right;
 }
 
-.text-center {
-    text-align: center;
+.text-success{
+    color: var(--success-font-color);
+    font-weight: bold;
 }
 
 .title {

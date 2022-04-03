@@ -51,7 +51,7 @@ class TransactionOwnAccountController extends Controller
         return $data;
     }
 
-    public function transfer($source_account_id,$target_account_id,$amount){
+    private function transfer($source_account_id,$target_account_id,$amount){
         $source_account=Account::find($source_account_id);
         $target_account=Account::find($target_account_id);
         $source_account->amount-=$amount;
@@ -80,7 +80,7 @@ class TransactionOwnAccountController extends Controller
             'source_account.numeric'=>'Seleccione la cuenta de origen.',
             'target_account.required'=>'Se requiere una cuenta de destino.',
             'target_account.numeric'=>'Seleccione la cuenta de destino.',
-            'amount.required'=>'Se requiere un valor a transferir _1',
+            'amount.required'=>'Se requiere un valor a transferir',
             'amount.min'=>'El valor a transferir debe ser mayor a 0.'
         ];
 

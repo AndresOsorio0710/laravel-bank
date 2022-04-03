@@ -17,3 +17,16 @@
         $menu.classList.remove("is-active");
     });
 })(document);
+
+/* Modal */
+const modal = document.querySelector('#modal');
+
+function showModal(){
+    modal.classList.toggle("none");
+    console.log('Show');
+}
+
+function closeModal(){
+    modal.classList.add('none');
+    console.log('Close');
+}
