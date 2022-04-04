@@ -115,6 +115,68 @@ p {
     border: thin solid var(--danger-border-color);
 }
 
+/* Form */
+.form {
+    margin: 2rem auto;
+    padding: 1rem;
+    max-width: 100%;
+}
+
+.form > * {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    display: block;
+    width: 100%;
+}
+
+.form input,
+.form select {
+    font-size: 0.85rem;
+    font-family: var(--font);
+}
+
+.form input {
+    border: 0;
+    border-bottom: thin solid var(--gray-dark-color);
+    padding-left: 0;
+}
+
+.form input[type="sibmit"] {
+    margin-top: 0;
+    cursor: pointer;
+    transition: all 0.5s ease-out;
+}
+
+.form input[type="sibmit"]:hover {
+    opacity: 0.75;
+}
+
+.form select {
+    border: 0;
+    border-bottom: thin solid var(--gray-dark-color);
+    padding-left: 0;
+}
+
+.form .title {
+    text-align: center;
+}
+
+.form *::placeholder {
+    color: var(--gray-dark-color);
+}
+
+@media screen and (min-width: 768px) {
+}
+
+@media screen and (min-width: 1024px) {
+    .form input,
+    .form select {
+        font-size: 1rem;
+    }
+}
+
 /* Form Control */
 .form-control {
     padding: 1rem;
@@ -243,7 +305,7 @@ p {
     }
 }
 /* Modal question */
-.modal{
+.modal {
     position: fixed;
     z-index: 999;
     top: 0;
@@ -261,10 +323,9 @@ p {
     position: relative;
 }
 
-.container-modal{
+.container-modal {
     background-color: var(--white-color);
 }
-
 
 /* Navbar Button */
 .nav-btn {
@@ -330,53 +391,68 @@ td {
 }
 
 .col {
+    grid-column: span auto;
+    margin: 2px;
+}
+
+.col-1 {
     grid-column: span 1;
+    margin: 2px;
 }
 
 .col-2 {
     grid-column: span 2;
+    margin: 2px;
 }
 
 .col-3 {
     grid-column: span 3;
+    margin: 2px;
 }
 
 .col-4 {
     grid-column: span 4;
+    margin: 2px;
 }
 
 .col-5 {
     grid-column: span 5;
-    margin: 8px 8px 8px 8px;
+    margin: 2px;
 }
 
 .col-6 {
     grid-column: span 6;
-    margin: 8px 8px 8px 8px;
+    margin: 2px;
 }
 
 .col-7 {
     grid-column: span 7;
+    margin: 2px;
 }
 
 .col-8 {
     grid-column: span 8;
+    margin: 2px;
 }
 
 .col-9 {
     grid-column: span 9;
+    margin: 2px;
 }
 
 .col-10 {
     grid-column: span 10;
+    margin: 2px;
 }
 
 .col-11 {
     grid-column: span 11;
+    margin: 2px;
 }
 
 .col-12 {
     grid-column: span 12;
+    margin: 2px;
 }
 
 .container {
@@ -385,7 +461,12 @@ td {
     max-width: var(--max-width);
 }
 
-.container-center{
+.container-blok {
+    display: block;
+    width: 100%;
+}
+
+.container-center {
     margin-top: auto;
     margin: auto;
     max-width: var(--max-width);
@@ -393,7 +474,7 @@ td {
     justify-content: center;
 }
 
-.container-right{
+.container-right {
     margin-top: auto;
     margin: auto;
     max-width: var(--max-width);
@@ -416,11 +497,11 @@ td {
     text-align: right;
 }
 
-.m-1r{
+.m-1r {
     margin: 0rem 1rem;
 }
 
-.mtop-16{
+.mtop-16 {
     margin-top: 16px;
 }
 
@@ -433,8 +514,9 @@ td {
 }
 
 .row {
+    width: 100%;
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .row-10 {
@@ -445,13 +527,12 @@ td {
 .section {
     padding: 2rem 1rem;
 }
-
 .section-title {
     border-top: thin solid var(--first-color);
     border-bottom: thin solid var(--first-color);
-    margin: 2rem auto;
+    margin: 1rem auto;
     padding: 0.5rem 1rem;
-    width: 250px;
+    width: 75%;
     text-align: center;
     color: var(--title-color);
 }
@@ -460,7 +541,7 @@ td {
     text-align: center;
 }
 
-.text-danger{
+.text-danger {
     color: var(--danger-font-color);
     font-weight: bold;
 }
@@ -473,18 +554,34 @@ td {
     text-align: right;
 }
 
-.text-success{
+.text-success {
     color: var(--success-font-color);
     font-weight: bold;
 }
 
 .title {
     border-bottom: 2px solid var(--first-color);
-    margin: 1rem auto;
-    padding: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
     width: 100%;
     font-weight: bold;
     color: var(--title-color);
+}
+
+@media screen and (min-width: 768px) {
+    .row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .row {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+    }
 }
 
 /* Site Styles */
@@ -506,6 +603,14 @@ td {
 
 .account-card .name a:hover {
     color: var(--first-alpha-color);
+}
+
+.full-container-center {
+    width: 100%;
+    min-height: 93vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {

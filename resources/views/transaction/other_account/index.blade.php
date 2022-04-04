@@ -1,14 +1,12 @@
 @extends('transaction.master')
 
 @section('transaction_title')
-<div class="section">
   <h2 class="section-title">Other Accounts</h2>
-</div>
 @endsection
 
 @section('transaction_content')
-<div class="row-10">
-  <div class="col-5 box-shadow-1 p-1r">
+<div class="row">
+  <div class="col-6 box-shadow-1 p-1r">
     <h2 class="title text-center">My Accounts</h2>
     <table>
       <thead>
@@ -27,10 +25,10 @@
       </tbody>    
     </table>
   </div>
-  <div class="col-5">
-    <form method="POST" class="form-control box-shadow-1">
+  <div class="col-6 box-shadow-1">
+    <form method="POST" class="form">
       @csrf
-      <label for="title" class="title">New Transaction</label>
+      <h2 for="title" class="title">New Transaction</h2>
       <select name="source_account" id="source_account" velue="{{ old('source_account') }}">
         <option value="x" selected disabled class="none">Select the source account</option>
         @foreach ($my_accounts as $account)

@@ -2,7 +2,7 @@
 
 @section('title', 'Account')
 
-@section('content_board')
+@section('content')
 <div class="section">
   <div class="container">
     <h2 class="section-title">My Accounts</h2>

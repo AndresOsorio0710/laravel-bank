@@ -38,9 +38,9 @@
       </nav>
     </section>
   </header>
-  @yield('content')
+  <div class="full-container-center">@yield('content')</div>
   @if (auth()->check())
-    @yield('content_board')
+    <div class="full-container-center">@yield('content_board')</div>
   @endif
   <article class="modal none" id="modal">
     <div class="modal-content">
@@ -48,7 +48,7 @@
         <h2 class="title text-center">Log Out</h2>
         <p class="text-left">Are you sure you want to log out?</p>
         <div class="container-right">
-          <button onclick="closeModal()" class="btn m-1r">No</button>
+          <a onclick="closeModal()" class="btn m-1r">No</a>
           <a href="{{ route('login.destroy') }}"  onclick="closeModal()" class="btn">Yes</a>
         </div>
       </div>

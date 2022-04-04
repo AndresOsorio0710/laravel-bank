@@ -1,52 +1,49 @@
-<div class="row-10">
-  <div class="col"></div>
-  <div class="col-8 box-shadow-1 p-1r m-1r"> 
-    <h2 class="title text-center">My Transaction History</h2>
-    <div class="container-center">
-      <div class="form-control">
-        <label for="">Source Account</label>
-        <select name="" id="source_id" onchange="changeSourceId()">
-          <option value="0" selected>All</option>
-          @foreach ($my_accounts as $account)
-            <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
-          @endforeach
-          @foreach ($other_accounts as $account)
-            <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
-          @endforeach
-        </select>
-      </div><div class="form-control">
-        <label for="">Target Account</label>
-        <select name="" id="target_id" onchange="changeTargetId()">
-          <option value="0" selected>All</option>
-          @foreach ($my_accounts as $account)
-            <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
-          @endforeach
-          @foreach ($other_accounts as $account)
-            <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
-          @endforeach
-        </select>
-      </div>
+<div class="box-shadow-1 p-1r "> 
+  <h2 class="title text-center">My Transaction History</h2>
+  <div class="row">
+    <div class="form col-6">
+      <label for="">Source Account</label>
+      <select name="" id="source_id" onchange="changeSourceId()">
+        <option value="0" selected>All</option>
+        @foreach ($my_accounts as $account)
+          <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
+        @endforeach
+        @foreach ($other_accounts as $account)
+          <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
+        @endforeach
+      </select>
     </div>
-    <table>
-      <thead>
-        <tr>
-          <th class="text-left">Date</th>
-          <th class="text-left">Source Account</th>
-          <th class="text-left">Target Account</th>
-          <th class="text-right">Amount</th>
-        </tr>
-      </thead> 
-      <tbody id="table">
-      </tbody>
-    </table> 
-    <div id="paginator" class="container-center mtop-16">
-      <a id="back" class="btn m-1r" onclick="backPage()">Back</a>
-      <small id="page"  class="m-1r"></small>
-      <a id="next" class="btn m-1r" onclick="nextPage()">Next</a>
+    <div class="form col-6">
+      <label for="">Target Account</label>
+      <select name="" id="target_id" onchange="changeTargetId()">
+        <option value="0" selected>All</option>
+        @foreach ($my_accounts as $account)
+          <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
+        @endforeach
+        @foreach ($other_accounts as $account)
+          <option value="{{ $account->id }}">{{ strtoupper($account->name) }}</option>
+        @endforeach
+      </select>
     </div>
   </div>
-  <div class="col"></div>
-</div> 
+  <table>
+    <thead>
+      <tr>
+        <th class="text-left">Date</th>
+        <th class="text-left">Source Account</th>
+        <th class="text-left">Target Account</th>
+        <th class="text-right">Amount</th>
+      </tr>
+    </thead> 
+    <tbody id="table">
+    </tbody>
+  </table> 
+  <div id="paginator" class="container-center mtop-16">
+    <a id="back" class="btn m-1r" onclick="backPage()">Back</a>
+    <small id="page"  class="m-1r"></small>
+    <a id="next" class="btn m-1r" onclick="nextPage()">Next</a>
+  </div>
+</div>
 
 @section('js')
 <script>
